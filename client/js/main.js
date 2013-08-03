@@ -10,30 +10,16 @@ Template.game.rendered = function(){
 	if (canvas.getContext){
 		ctx = canvas.getContext('2d');
 	}
-	window.requestAnimFrame = (function(){
-		return  window.requestAnimationFrame       || 
-		window.webkitRequestAnimationFrame || 
-		window.mozRequestAnimationFrame    || 
-		window.oRequestAnimationFrame      ||  
-		window.msRequestAnimationFrame     ||  
-		function( callback ){ 
-			return window.setTimeout(callback, 1000 / 60);
-		};
-	})();
-	window.cancelRequestAnimFrame = ( function() {
-		return window.cancelAnimationFrame          ||
-		window.webkitCancelRequestAnimationFrame    ||
-		window.mozCancelRequestAnimationFrame       ||
-		window.oCancelRequestAnimationFrame     ||
-		window.msCancelRequestAnimationFrame        ||
-		clearTimeout
-	} )();		
-		function animate(){
-			init = requestAnimFrame(animate);
-			if(!wait){
+
+	var fps = 60;
+	function draw() {
+	    setTimeout(function() {
+	        requestAnimationFrame(draw);
+	        if(!wait){
 				court.draw();
 			}
-		}
+	    }, 1000 / fps);
+	}
 	
 	/** first draw **/
 	ctx.clearRect(0,0,900,500);
@@ -42,7 +28,7 @@ Template.game.rendered = function(){
 	staticBars.draw();
 	ball.draw();
 	wait = true;
-	animate();
+	draw();
 	/****************/
 	document.onkeydown = function(evt){
 		if(evt.keyCode == 40){
@@ -64,4 +50,11 @@ Template.game.rendered = function(){
 		Session.set('playerScore', 0);
 		Session.set('aiScore', 0);
 	}
+	help = function(){
+		 $('#helpOverlay').toggle();
+	}
+
+	/**TWITTER**/
+	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+	/**********/
 };	

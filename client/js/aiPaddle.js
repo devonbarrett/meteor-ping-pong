@@ -12,11 +12,11 @@ aiPaddle = {
 				},
 				move: function(){
 					if(ball.dx > 0){
-						if(ball.y + 50 > aiPaddle.y){
-							aiPaddle.y = aiPaddle.y + 50
+						if(ball.y > aiPaddle.y + 50){
+							aiPaddle.y = aiPaddle.y + 30
 						}
-						if(ball.y -50 < aiPaddle.y){
-							aiPaddle.y = aiPaddle.y - 50
+						if(ball.y < aiPaddle.y + 50){
+							aiPaddle.y = aiPaddle.y - 30
 						}
 						if(this.y > 400)  this.y = 400;
 						if(this.y < 0)  this.y = 0;

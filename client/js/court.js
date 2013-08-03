@@ -1,12 +1,16 @@
 wait = false;
 court = {
+				ballmove : 0,
 				draw: function(){
+					this.ballmove += 1;
 					ctx.clearRect(0,0,900,500);
 					userPaddle.draw();
 					aiPaddle.draw();
 					staticBars.draw();
 					ball.draw();
-					ball.move();
+					if (court.ballmove % 2 == 0) {
+						ball.move();
+					}
 					aiPaddle.move();
 					court.point();
 				},

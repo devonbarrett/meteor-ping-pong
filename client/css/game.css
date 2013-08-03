@@ -32,13 +32,36 @@ body {
   height: 500px;
   margin-bottom: 20px;
   margin: 0 auto;
+  margin-top: -20px;
 }
 
 #canvas {
   height: 500px;
   width: 900px;
 }
-
+ #help {
+  font-size: 18px;
+  color: #00ff00;
+  font-family: monospace;
+ }
+ #helpOverlay {
+  display: block;
+  font-size: 18px;
+  color: #00ff00;
+  font-family: monospace;
+  width: 900px;
+  position: absolute;
+  background: #000;
+  padding-top: 50px;
+  height: 900px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+ }
+ #helpOverlay h3 {
+  color: #fff;
+ }
 
 /*footer*/
 #footer {

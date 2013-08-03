@@ -6,12 +6,23 @@
 <body>
   <a href="https://github.com/devonbarrett/meteor-ping-pong"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>
   <div id="title">Meteor Pong</div>
+  <section id="helpOverlay">
+    <a onclick="help()" style="float: right; cursor: pointer; text-decoration: underline; color: #fff;">Close</a>
+    <strong>Controls: </strong><br />
+    <p>Simply use the up and down arrow keys to move your paddle.</p>
+    <hr />
+    <strong>Difficulty: </strong><br />
+    <p>The game starts of slow, but as the scores increases so does the speed, until it becomes close to impossible. Refresh the page to reset the speed.</p>
+    <br />
+    <center><h3>Good Luck</h3></center>
+  </section>
   {{> game}}
 </body>
-
 <template name="game">
  <div id="score">{{score}}</div>
  <div id="court">
+        <span style="float: left; cursor: pointer; text-decoration: underline;" onclick="help()" id="help">Help</span>
+        <span style="float: right;"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pong.devonbarrett.net" data-text="Just played a game of Pong it was {{score}}. Beat that!" data-related="devonbarrett">Tweet</a></span>
         <canvas id="canvas" width="900" height="500">Whoa there Dinosaur. Seems like someone needs to update their browser.</canvas>
         {{> footer}}
  </div>
@@ -19,7 +30,7 @@
 <template name="footer">
   <footer>
     <div id="footer">
-      <span style="float: left; cursor: pointer; text-decoration: underline;" onclick="resetGame()">Reset</span><span>&copy; 2013 <a href="http://www.devonbarrett.net">Devon Barrett</a>&nbsp;|&nbsp;<a href="https://github.com/devonbarrett/">Github Profile</a></span>
+      <span style="float: left; cursor: pointer; text-decoration: underline;" onclick="resetGame()">Reset</span><span><a href="http://www.devonbarrett.net">Devon Barrett</a>&nbsp;|&nbsp;<a href="https://github.com/devonbarrett/">Github Profile</a></span>&nbsp;|&nbsp;<a href="http://www.twitter.com/devon_barrett">Twitter</a>
     </div>
   </footer>
 </template>
