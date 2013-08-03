@@ -1,0 +1,25 @@
+<head>
+  <title>Meteor Pong</title>
+  <link href='http://fonts.googleapis.com/css?family=Geo' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <a href="https://github.com/devonbarrett/meteor-ping-pong"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>
+  <div id="title">Meteor Pong</div>
+  {{> game}}
+</body>
+
+<template name="game">
+ <div id="score">{{score}}</div>
+ <div id="court">
+        <canvas id="canvas" width="900" height="500">Whoa there Dinosaur. Seems like someone needs to update their browser.</canvas>
+        {{> footer}}
+ </div>
+</template>
+<template name="footer">
+  <footer>
+    <div id="footer">
+      <span style="float: left; cursor: pointer; text-decoration: underline;" onclick="resetGame()">Reset</span><span>&copy; 2013 <a href="http://www.devonbarrett.net">Devon Barrett</a>&nbsp;|&nbsp;<a href="https://github.com/devonbarrett/">Github Profile</a></span>
+    </div>
+  </footer>
+</template>
