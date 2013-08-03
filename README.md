@@ -1,5 +1,6 @@
 <h3>Meteor Pong</h3>
 <hr/>
+<a href="http://pong.devonbarrett.net">Play it Here!</a>
 <br />
 <p>A simple version of pong written in <a href="http://meteor.com">Meteor JS</a>. It gets harder as the score increases and quickly becomes impossible.</p>
 <br />
